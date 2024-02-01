@@ -129,7 +129,7 @@ function chatReducer(state: State, action: Action): State {
 
 function generateInitialState(): State {
   const chatsFromLocalStorage =
-    window !== undefined
+    typeof window !== undefined
       ? JSON.parse(window?.localStorage?.getItem("chats") || "{}")
       : {};
 
