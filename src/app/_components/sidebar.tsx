@@ -20,7 +20,9 @@ export const Sidebar = ({
   selectedChat,
   deleteChat,
 }: SidebarProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(window.innerWidth > 768);
+  const [isOpen, setIsOpen] = useState<boolean>(
+    global.window?.innerWidth > 768
+  );
 
   const handleClick = () => {
     setIsOpen((prev) => !prev);
