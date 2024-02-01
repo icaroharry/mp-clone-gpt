@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Clone GPT",
   description:
     "Mini Projeto do clone do chatGPT desenvolvido com Next, Tailwind e a API da OpenAI",
-  icons: "/images/bot.svg",
+  icons: "/images/assistant-icon.svg",
 };
 
 export default function RootLayout({
