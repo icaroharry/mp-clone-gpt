@@ -129,7 +129,7 @@ function chatReducer(state: State, action: Action): State {
 
 function generateInitialState(): State {
   const chatsFromLocalStorage = JSON.parse(
-    localStorage.getItem("chats") || "{}"
+    window?.localStorage?.getItem("chats") || "{}"
   );
 
   const id = uuid();
@@ -216,7 +216,7 @@ export const useChat = (openAiKey: string) => {
       delete chatsToSave[chatIndex];
     });
 
-    localStorage.setItem("chats", JSON.stringify(chatsToSave));
+    window?.localStorage?.setItem("chats", JSON.stringify(chatsToSave));
   }, [state.chats]);
 
   return {
