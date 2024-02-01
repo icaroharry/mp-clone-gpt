@@ -128,9 +128,10 @@ function chatReducer(state: State, action: Action): State {
 }
 
 function generateInitialState(): State {
-  const chatsFromLocalStorage = JSON.parse(
-    window?.localStorage?.getItem("chats") || "{}"
-  );
+  const chatsFromLocalStorage =
+    window !== undefined
+      ? JSON.parse(window?.localStorage?.getItem("chats") || "{}")
+      : {};
 
   const id = uuid();
   return {
